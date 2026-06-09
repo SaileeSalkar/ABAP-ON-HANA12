@@ -1,0 +1,16 @@
+@EndUserText.label: 'SERVICE DEF'
+define service ZCDS16_SDEF {
+  expose ZCDS16_C_M_PR_TRAVEL;
+  expose ZCDS17_C_M_PR_BOOKING;
+  expose ZCDS18_C_M_PR_BOSUP;
+  expose ZCDS10_I_U_CUSTOMER   as Customer;
+  expose ZCDS11_I_U_agency     as TravelAgency;
+  expose /DMO/I_Customer;
+  expose /DMO/I_Agency;
+  expose I_Currency;
+  expose I_Country;
+  expose /DMO/I_Supplement     as Supplement;
+  expose /DMO/I_SupplementText as SupplementText;
+  expose /DMO/I_Carrier        as Carrier;
+  expose /DMO/I_Connection     as Connection;
+}

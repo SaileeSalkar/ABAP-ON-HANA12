@@ -1,0 +1,6 @@
+@EndUserText.label: 'SER DEF FOR FIORI'
+define service ZSERDEF2 {
+  expose ZCDS12_C_U_TRAVEL;
+  expose ZCDS11_I_U_agency;
+  expose ZCDS10_I_U_CUSTOMER;
+}

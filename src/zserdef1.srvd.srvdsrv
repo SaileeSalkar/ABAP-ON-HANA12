@@ -1,0 +1,4 @@
+@EndUserText.label: 'SERV DEF'
+define service ZSERDEF1 {
+  expose ZCDS6_N;
+}

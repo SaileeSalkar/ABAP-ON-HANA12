@@ -1,0 +1,12 @@
+@EndUserText.label: 'DCL ON CDS7'
+@MappingRole: true
+define role ZCDS7_I {
+    grant
+        select
+            on
+                ZCDS7_I  //GRANT FULL ACCESS
+                
+                WHERE BP_ID = 'ni5aMqqK7z6LX5PBzQjMam';  ///LITERAL ACCESS
+                   
+                        
+}

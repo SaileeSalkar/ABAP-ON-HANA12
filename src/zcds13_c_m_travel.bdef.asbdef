@@ -1,0 +1,42 @@
+managed implementation in class zbp_cds13_c_m_travel unique;
+//strict ( 2 ); //Uncomment this line in order to enable strict mode 2. The strict mode has two variants (strict(1), strict(2)) and is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+define behavior for ZCDS13_C_M_TRAVEL alias Travel
+persistent table /dmo/travel
+lock master
+//authorization master ( instance )
+etag master lastchangedat
+{
+  create ( authorization : global );
+  update;
+  delete;
+ // field ( readonly ) travel_id;
+ field ( mandatory )  agency_id,customer_id;
+  association _Booking { create; }
+}
+
+define behavior for ZCDS14_C_M_BOOKING alias Booking
+persistent table /DMO/booking
+lock dependent by _Travel
+//authorization dependent by _Travel
+etag master lastchangedat
+{
+  update;
+  delete;
+  field ( readonly:update ) travel_id, booking_id;
+  association _Travel;
+  association _BookSupplemnt { create; }
+}
+
+define behavior for ZCDS15_C_M_BOOKSUPP alias BookSupplment
+persistent table /DMO/BOOKSUPPL_M
+lock dependent by _Travel
+//authorization dependent by _Travel
+etag master lastchangedat
+{
+  update;
+  delete;
+  field ( readonly:update ) travel_id, booking_id, booking_supplement_id;
+  association _Travel;
+  association _Booking;
+}
